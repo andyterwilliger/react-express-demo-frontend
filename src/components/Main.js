@@ -5,11 +5,11 @@ import Show from '../pages/Show';
 
 function Main(props) {
     const [ random, setRandom ] = useState(null);
-    const URL = 'http://localhost:4000/random';
+    const URL = 'http://localhost:4000/random/';
 
     const getRandom = async () =>{
         const response = await fetch(URL);
-        const data = await response.json;
+        const data = await response.json();
         setRandom(data);
     }
     
@@ -32,7 +32,7 @@ function Main(props) {
         <main>
             <Switch>
                 <Route exact path='/'>
-                    <Index />
+                    <Index random = {random} createRandom={createRandom}/>
                 </Route>
                 <Route
                     path='/random/:id'
