@@ -7,6 +7,8 @@ function Main(props) {
     const [ random, setRandom ] = useState(null);
     const URL = 'http://localhost:4000/random/';
 
+    //create people using fetch
+
     const getRandom = async () =>{
         const response = await fetch(URL);
         const data = await response.json();
